@@ -1,8 +1,1 @@
-
-echo "# Material-Requirement-Processing-" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/Krishna071/Material-Requirement-Processing-.git
-git push -u origin main
+Material requirements planning (MRP) is a computer-based inventory management system designed to improve productivity for businesses. Companies use material requirements-planning systems to estimate quantities of raw materials and schedule their deliveries.

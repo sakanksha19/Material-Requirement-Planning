@@ -205,6 +205,56 @@
          
        //  echo $totalProducts;
 
+       // Date:2022-01-06
+    //    YARNS REQUIREMENT:750           
+    //    YARNS BILL:7500 
+
+    //    DYES REQUIREMENT:750 
+    //    DYES BILL:3750 
+
+    //    FABRICS REQUIREMENT:1075           
+    //    FABRICS BILL:16125 
+
+    //    DECORATIVES REQUIREMENT:1100   
+    //    DECORATIVES BILL:22000 
+
+    //    TOTAL NUMBER OF ORDERS:60 
+    //    TOTAL BILL:₹49375 
+
+    // check remaining;
+
+    $remY = "Select * from  availableData where Material = 'Yarns'"; 
+
+    if($r1 = $con->query($remY)){            
+     $r1 = $r1->fetch_array(); 
+     $yarnCount=$yarnCount-$r1['rem'];
+    } 
+
+    $remdy = "Select * from  availableData where Material = 'Dyes'"; 
+
+    if($r2 = $con->query($remdy)){            
+     $r2 = $r2->fetch_array(); 
+     $dyesCount=$dyesCount-$r2['rem'];
+    }
+
+    $remF = "Select * from  availableData where Material = 'Fabrics'"; 
+
+    if($r3 = $con->query($remF)){            
+     $r3 = $r3->fetch_array(); 
+     $fabricsCount=$fabricsCount-$r3['rem'];
+
+    } 
+
+    $remD = "Select * from  availableData where Material = 'Decoratives'"; 
+
+    if($r4 = $con->query($remD)){            
+     $r4 = $r4->fetch_array(); 
+     $decorativeCount=$decorativeCount-$r4['rem'];
+
+    }
+
+    $priceY = "Select * from  PriceTable where Material = 'Yarns'"; 
+
        if($r1 = $con->query($priceY)){            
         $r1 = $r1->fetch_array(); 
         $yarnsTotalPrice=$yarnCount*$r1['price'];
@@ -247,17 +297,17 @@
 
         echo "<div id='Printable'  style=' font-size: 20px; padding-top: 0px;margin: 0px 0px 0px 0px ; font-weight:bold' >
         <pre>------------------------------------------------------------------------------------------------------------------</br>  
-                                                BILLING AMOUNT 
+                                                 Total Price 
                                                Date:$DATE
         </br>------------------------------------------------------------------------------------------------------------------</br>
                                           YARNS REQUIREMENT:$yarnCount           
-                                          YARNS BILL:$yarnsTotalPrice <br /> 
+                                          YARNS BILL:₹$yarnsTotalPrice <br /> 
                                           DYES REQUIREMENT:$dyesCount 
-                                          DYES BILL:$dyesTotalPrice <br /> 
+                                          DYES BILL:₹$dyesTotalPrice <br /> 
                                           FABRICS REQUIREMENT:$fabricsCount           
-                                          FABRICS BILL:$fabricsTotalPrice <br />
+                                          FABRICS BILL:₹$fabricsTotalPrice <br />
                                           DECORATIVES REQUIREMENT:$decorativeCount   
-                                          DECORATIVES BILL:$decorativeTotalPrice </br > 
+                                          DECORATIVES BILL:₹$decorativeTotalPrice </br > 
                                           TOTAL NUMBER OF ORDERS:$totalProducts 
                                           TOTAL BILL:₹$totalBill 
         </br>-------------------------------------------------------------------------------------------------------------------</pre> 

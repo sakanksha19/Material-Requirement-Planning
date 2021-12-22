@@ -86,7 +86,7 @@
     
             if($con->query($InsertDemandtable)==true){
                     ?> 
-                   <img class ="center" src="Imgc.png" alt=""  height="350" width="300">
+                   <img class ="center" src="Imgc.png" alt=""  height="250" width="250">
                    <h1 style="text-align: center; font-size: 60px; padding-top: 0px">Thank you for your order<h1>
                     <?php
 

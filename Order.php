@@ -30,12 +30,22 @@
         color:Black;
         background:#E6E6FA;
         padding: 20px;
-        position:fixed;
-        top:50%;
+        position: fixed;
+        top:74%;
         left:50%;
         transform: translate(-50%, -50%);
     }
-  
+    * {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
     </style>   
     <script type="text/javascript">
     
@@ -49,6 +59,17 @@
 <body>
 <img src="bg.jpg" alt="factory" style= "width:100%; height: 90%; position: absolute; z-index:-1; opacity: 0.9">
   <?php include('navbar.php'); ?>
+  <div class="row">
+   <div class="column">
+    <img src="jeans.jpg" alt="jeans" style="width: 95%; height: 50%">
+  </div>
+  <div class="column">
+    <img src="shirt.jpg" alt="shirt" style="width: 95%; height: 50%">
+  </div>
+  <div class="column">
+    <img src="t-shirt.jpg" alt="t-shirt" style="width: 95%; height: 50%">
+  </div>
+</div>
 <div class = 'moneyTransfer'>
     <h1> Order Products</h1>
    
